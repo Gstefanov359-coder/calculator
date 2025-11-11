@@ -1,13 +1,18 @@
-num = int(input("Enter your first number "))
-sign = input("Enter the sign (+, -, *, /): ")
-num_two = int(input("Enter your second number "))
-if sign == "+":
-    print(num + num_two)
-elif sign == "-":
-    print(num - num_two)
-elif sign == "*":
-    print (num * num_two)
-elif sign == "/":
-    print(num / num_two)
-else:
-    print("I cant do it")
+def calculate(num, sign, num_two):
+    """Функцията прави математическата операция."""
+    if sign == "+":
+        return num + num_two
+    elif sign == "-":
+        return num - num_two
+    elif sign == "*":
+        return num * num_two
+    elif sign == "/":
+        if num_two == 0:
+            return "Грешка: Деление на нула!"
+        return num / num_two
+    elif sign == "^":
+        return num ** num_two
+    elif sign == "%":
+        return num % num_two
+    else:
+        return "Грешка: Няма такава операция!"
